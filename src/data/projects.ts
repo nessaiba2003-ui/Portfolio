@@ -66,4 +66,34 @@ export const projects: Project[] = [
   ],
   summary: "Application mobile synchronisée avec la plateforme web offrant la gestion des réservations, des événements, des notifications, des profils utilisateurs et un accès simplifié aux services de la Cité de l'Innovation."
 },
+{
+  title: 'AI Galaxy Classification',
+  period: '2026',
+  tags: ['Python', 'TensorFlow', 'Computer Vision', 'Astronomy', 'Deep Learning'],
+  summary: "Développement d'un modèle d'intelligence artificielle pour la classification automatique des galaxies à partir d'images astronomiques, avec analyse des performances et visualisation des résultats."
+},
+{
+  title: 'InnoBot - AI Assistant',
+  period: '2026',
+  tags: ['Spring AI', 'OpenAI API', 'RAG', 'React', 'Spring Boot'],
+  summary: "Assistant intelligent permettant de répondre aux questions des utilisateurs, guider les visiteurs et faciliter l'accès aux services de la Cité de l'Innovation."
+},
+{
+  title: 'Tourism Platform',
+  period: '2026',
+  tags: ['React', 'Tailwind CSS', 'Spring Boot', 'REST API'],
+  summary: "Plateforme web moderne dédiée à la promotion du tourisme marocain avec une interface responsive et une expérience utilisateur optimisée."
+},
+{
+  title: 'DevOps Monitoring Dashboard',
+  period: '2026',
+  tags: ['Docker', 'Prometheus', 'Grafana', 'Linux'],
+  summary: "Déploiement d'une infrastructure DevOps permettant la supervision en temps réel des applications et des serveurs grâce à Prometheus et Grafana."
+},
+{
+  title: 'Smart Event Management',
+  period: '2026',
+  tags: ['Spring Boot', 'React', 'MySQL', 'Docker'],
+  summary: "Plateforme de gestion intelligente des événements avec réservations, notifications, statistiques et tableau de bord administrateur."
+},
 ];
