@@ -15,7 +15,8 @@ export interface Profile {
 
 export const profile: Profile = {
   name: 'NESSAIBA MESSAADIYENE',
-  role: 'Étudiante en Systèmes Informatiques Répartis & DevOps',
+  role: ' Diplômée en Systèmes Informatiques Répartis
+          Développeuse Full-Stack | Intelligence Artificielle | Astronomie',
   location: 'Maroc',
   email: 'nessaiba2003@gmail.com',
   socials: [
@@ -23,7 +24,7 @@ export const profile: Profile = {
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/messaadiyene-nessa%C3%AFba-b4bb96353' },
   ],
   about:
-    "Passionnée par l'Intelligence Artificielle, le développement web et les Systèmes Informatiques Répartis. Je m'intéresse vivement à l'automatisation DevOps et à l'exploration des mystères de l'astronomie.",
+    "Diplômée en Systèmes Informatiques Répartis, je conçois des applications web et mobiles modernes en utilisant Spring Boot, React et React Native. Passionnée par l'intelligence artificielle, le DevOps et les architectures distribuées, je recherche des opportunités pour contribuer à des projets innovants.",
   skills: [
     'React',
     'TypeScript',
