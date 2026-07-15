@@ -15,8 +15,7 @@ export interface Profile {
 
 export const profile: Profile = {
   name: 'NESSAIBA MESSAADIYENE',
-  role: ' Diplômée en Systèmes Informatiques Répartis
-          Développeuse Full-Stack | Intelligence Artificielle | Astronomie',
+  role: 'Diplômée en Systèmes Informatiques Répartis | Développeuse Full-Stack | Intelligence Artificielle | Astronomie',
   location: 'Maroc',
   email: 'nessaiba2003@gmail.com',
   socials: [
