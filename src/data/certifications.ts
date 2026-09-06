@@ -14,6 +14,16 @@ export interface Certification {
 
 export const certifications: Certification[] = [
   {
+    title: 'Certificat de Participation Scientifique — ICAY 2026',
+    issuer: 'International Congress of the Astronomical Youth — Université Cadi Ayyad',
+    issueDate: '2026-07',
+    skills: ['Intelligence Artificielle', 'Classification des Galaxies', 'Communication Scientifique'],
+    tags: ['Astronomie', 'IA', 'Recherche'],
+    image: '/images/icay-2026-cert.jpg',
+    imageAlt: 'Certificat de participation scientifique au congrès ICAY 2026',
+    status: 'active',
+  },
+  {
     title: 'Certification en Astronomie Africaine',
     issuer: 'African Astronomical Society (AfAS)',
     issueDate: '2024-04',
