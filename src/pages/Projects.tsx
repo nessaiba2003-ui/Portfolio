@@ -72,18 +72,8 @@ export default function Projects() {
               </div>
             </div>
 
-            <div className="mt-8 flex gap-4 text-sm font-semibold">
-              {p.link && (
-                <a
-                  href={p.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-1.5 hover:text-primary transition-colors"
-                >
-                  Demo <span>→</span>
-                </a>
-              )}
-              {p.repo && (
+            {p.repo && (
+              <div className="mt-8 flex gap-4 text-sm font-semibold">
                 <a
                   href={p.repo}
                   target="_blank"
@@ -92,8 +82,8 @@ export default function Projects() {
                 >
                   Code <span>↗</span>
                 </a>
-              )}
-            </div>
+              </div>
+            )}
           </motion.article>
         ))}
       </motion.div>
