@@ -1,10 +1,20 @@
 import { Outlet, NavLink } from 'react-router-dom'
 import { profile } from '@/data/profile'
 import ThemeToggle from '@/components/ThemeToggle'
+import { useState } from 'react'
 
 import { motion } from 'framer-motion'
 
 export default function RootLayout() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const navigation = [
+    { to: '/projects', label: 'Projets' },
+    { to: '/experience', label: 'Parcours' },
+    { to: '/education', label: 'Formations' },
+    { to: '/certifications', label: 'Certifications' },
+    { to: '/contact', label: 'Contact' },
+  ]
+
   return (
     <div className="min-h-dvh text-foreground selection:bg-primary/30 flex flex-col font-sans selection:text-primary-foreground relative overflow-x-hidden">
       <div className="aurora-container" aria-hidden="true">
@@ -23,13 +33,7 @@ export default function RootLayout() {
           </NavLink>
 
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">
-            {[
-              { to: '/projects', label: 'Projets' },
-              { to: '/experience', label: 'Parcours' },
-              { to: '/education', label: 'Formations' },
-              { to: '/certifications', label: 'Certifications' },
-              { to: '/contact', label: 'Contact' },
-            ].map((link) => (
+            {navigation.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
@@ -44,10 +48,57 @@ export default function RootLayout() {
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
             <ThemeToggle />
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen((open) => !open)}
+              className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background/80 hover:bg-muted transition-colors"
+              aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation"
+            >
+              {mobileMenuOpen ? (
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
+                </svg>
+              )}
+            </button>
           </div>
         </nav>
+
+        {mobileMenuOpen && (
+          <motion.nav
+            id="mobile-navigation"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="md:hidden border-t border-border bg-background/95 px-6 py-4 shadow-lg backdrop-blur-xl"
+            aria-label="Navigation mobile"
+          >
+            <div className="mx-auto grid max-w-7xl gap-1">
+              {navigation.map((link) => (
+                <NavLink
+                  key={link.to}
+                  to={link.to}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={({ isActive }) =>
+                    `rounded-xl px-4 py-3 text-base font-semibold transition-colors ${
+                      isActive
+                        ? 'bg-primary text-primary-foreground'
+                        : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                    }`
+                  }
+                >
+                  {link.label}
+                </NavLink>
+              ))}
+            </div>
+          </motion.nav>
+        )}
       </header>
 
       <motion.main
